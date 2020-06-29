@@ -64,7 +64,7 @@ const Dashboard = ({getTransactions, transactions, next, isFetching, resetTransa
     <>
       <DocumentTitle title="Dashboard" />
       <div className="container dashboard">
-        <Grid justify="center" container spacing={5} className="cart-caontainer">
+        <Grid justify="center" container spacing={5} className="cart-container">
           <Grid item md={2}>
             <Card square>
               <CardContent>
@@ -79,6 +79,7 @@ const Dashboard = ({getTransactions, transactions, next, isFetching, resetTransa
                   <Grid container spacing={5} className="tool-bar">
                     <Grid item md={6}>
                       <InputBase
+                        color="secondary"
                         placeholder="Search…"
                         onInput={handleSearchInput}
                         inputProps={{ 'aria-label': 'search' }}

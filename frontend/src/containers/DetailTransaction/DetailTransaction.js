@@ -8,10 +8,12 @@ import {
   FormControl,
   InputLabel,
   Select,
+  Button,
 } from "@material-ui/core";
 import DocumentTitle from "react-document-title";
 import request from '../../utils/request';
 import parseDate from '../../helpers/parseDate';
+import { useHistory } from "react-router-dom";
 import { getTransaction } from "../../reducers/transaction/actions";
 
 const monthsNames = [
@@ -30,6 +32,7 @@ const monthsNames = [
 
 const DetailTransaction = ({getTransaction, transaction, isFetching}) => {
   let { pk } = useParams();
+  let history = useHistory();
   const [status, setStatus] = useState(transaction["status"]);
   useEffect(() => {
     getTransaction(pk);
@@ -64,8 +67,11 @@ const DetailTransaction = ({getTransaction, transaction, isFetching}) => {
         { (isFetching || !transaction["created"] )?
           <div className="loader">
             <div className="lds-dual-ring"></div>
-          </div> : 
+          </div> :
         <Grid item md={6}>
+          <Button onClick={() => {history.push("/");}} variant="contained" color="primary">
+            {"<-"} To home page
+          </Button>
           <p>{getPrettyDate(parseDate(transaction["created"]))}</p>
           <p>{transaction['reciever']['name']}</p>
           <p>{transaction['payment_type']}</p>

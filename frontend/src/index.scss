@@ -32,6 +32,10 @@ code {
   text-align: center !important;
 }
 
+#root {
+  overflow-x: hidden;
+}
+
 // Loader
 
 .loader {
