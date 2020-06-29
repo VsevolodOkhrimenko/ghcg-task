@@ -1,0 +1,11 @@
+.transaction {
+  &.send {
+    border-left: 5px solid red;
+  }
+  &.received {
+    border-left: 5px solid yellow;
+  }
+  &.payed {
+    border-left: 5px solid green;
+  }
+}
