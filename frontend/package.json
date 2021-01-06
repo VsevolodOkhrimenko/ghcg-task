@@ -19,7 +19,7 @@
     "react-scripts": "^3.4.1"
   },
   "devDependencies": {
-    "axios": "0.19.2",
+    "axios": "0.21.1",
     "localforage": "1.7.3",
     "node-sass": "4.13.1",
     "raven-js": "3.27.2",
